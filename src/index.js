@@ -118,7 +118,7 @@ let CurrencyConverter = function() {
       	<br>Курс: 1 ${baseCurrency} = ${(data.rates[toCurrency]/amount).toFixed(2)} ${toCurrency}
 			`
 			} else {
-			 converterContentOutput.innerHTML = `${amount} ${baseCurrency} = ${data.rates[toCurrency]} ${toCurrency}`
+			 converterContentOutput.innerHTML = `${amount} ${baseCurrency} = ${(data.rates[toCurrency]).toFixed(2)} ${toCurrency}`
 			}
 
 		} catch (error) {

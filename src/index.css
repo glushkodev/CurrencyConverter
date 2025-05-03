@@ -7,9 +7,7 @@
 body {
 	padding: 50px 0px;
 	font-family: arial;
-	font-size: 16px;
-	line-height: 24px;
-	background: radial-gradient(circle,rgba(188, 230, 201, 1) 0%, rgba(181, 218, 232, 1) 79%, rgba(201, 224, 255, 1) 100%);
+	background: radial-gradient(circle, rgba(225, 236, 250, 1) 40%, rgb(255 255 255) 100%);
 }
 
 ul {
@@ -18,20 +16,59 @@ ul {
 
 .converter {
 	margin: 0 auto;
-	box-shadow:  0 0 5px #666;
-	border-radius: 5px;
-	width: 320px;
-	background-color: #cfe5ff;
-	padding: 10px;
+	box-shadow: 0px 0px 8px #828282;
+	border-radius: 8px;
+	width: 600px;
+	background: linear-gradient(33deg, rgb(102 141 190) 0%, rgb(153 182 216) 22%, rgb(196 237 255) 100%);
+	padding: 20px 0;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	gap: 10px;
+	gap: 25px;
+}
+
+.converte__title {
+	color: #fff;
+	font-size: 30px;
+	width: 100%;
+  text-align: center;
 }
 
 .converte__content {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	gap: 10px;
+	gap: 20px;
+}
+
+.converte__content_input {
+	padding: 5px 10px;
+	border-radius: 5px;
+	border: none;
+	outline: none;
+}
+
+.converte__content_form_select {
+	cursor: pointer;
+}
+
+.converte__content_btn {
+	background-color: #4c6894;;
+	text-transform: uppercase;
+	border: none;
+	border-radius: 10px;
+	padding: 10px 40px;
+	color: #fff;
+	font-size: 20px;
+}
+
+.converte__content_btn:hover {
+	cursor: pointer;
+	background-color: #3e5b8a;
+}
+
+.converte__content_output {
+	color: #fff;
+	font-size: 20px;
+	text-align: center;
 }

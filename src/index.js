@@ -18,9 +18,10 @@ let CurrencyConverter = function() {
 
 				converterContentInput = document.createElement('input')
 				converterContentInput.classList.add('converte__content_input')
-				converterContentInput.placeholder = 'Введите сумму'
+				converterContentInput.placeholder = 'Enter amount'
 				converterContentInput.value = 1
 				converterContentInput.type = 'number'
+				converterContentInput.min = 1
 
 				let converterContentFormBase = document.createElement('form')
 				converterContentFormBase.classList.add('converte__content_form')
@@ -40,8 +41,8 @@ let CurrencyConverter = function() {
 					this.convertCurrency()
 				})
 
-		converterContentBtn.innerHTML = 'Рассчитать'
-		converterTitle.innerHTML = 'Конвертер валют'
+		converterContentBtn.innerHTML = 'Convert'
+		converterTitle.innerHTML = 'Currency Converter'
 		
 		converterContentFormTo.append(converterContentFormToSelect)
 		converterContentFormBase.append(converterContentFormBaseSelect)
@@ -88,7 +89,7 @@ let CurrencyConverter = function() {
 			converterContentFormBaseSelect.value = 'USD'
 			converterContentFormToSelect.value = 'EUR'
 		} catch (error) {
-				console.error('Ошибка загрузки валют:', error)
+				console.error('Error loading currencies:', error)
 		}
 	}
 
@@ -98,12 +99,12 @@ let CurrencyConverter = function() {
 		let toCurrency = converterContentFormToSelect.value
 
 		if (!amount || amount <= 0) {
-			alert('Пожалуйста, введите корректное число')
+			alert('Please enter a valid amount')
 			return
 		}
 
 		if (baseCurrency === toCurrency) {
-			alert('Пожалуйста, выберите разные валюты')
+			alert('Please select different currencies')
 			return
 		}
 
@@ -114,7 +115,7 @@ let CurrencyConverter = function() {
 			if (amount > 1) {
 			converterContentOutput.innerHTML = 
 			`
-				${amount} ${baseCurrency} = ${data.rates[toCurrency]} ${toCurrency}
+				${amount} ${baseCurrency} = ${(data.rates[toCurrency]).toFixed(2)} ${toCurrency}
       	<br>Курс: 1 ${baseCurrency} = ${(data.rates[toCurrency]/amount).toFixed(2)} ${toCurrency}
 			`
 			} else {
@@ -122,11 +123,10 @@ let CurrencyConverter = function() {
 			}
 
 		} catch (error) {
-			console.error('Ошибка конвертации', error)
-			converterContentOutput.innerHTML = 'Ошибка при конвертации валюты'
+			console.error('Conversion error', error)
+			converterContentOutput.innerHTML = 'Error converting currency'
 		}
 	}
-
 
 	init()
 	this.SelectCurrency()

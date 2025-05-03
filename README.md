@@ -1,4 +1,4 @@
-**Currency Converter — Simple and Fast Exchange Rate Tool**
+**Currency Converter — simple and fast exchange rate tool**
 
 Hello! This is my lightweight and user-friendly currency converter application built with vanilla JavaScript.  
 
